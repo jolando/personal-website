@@ -1,0 +1,70 @@
+section {
+  min-height: calc(100vh - 60px);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  scroll-snap-align: start;
+  scroll-margin-top: 60px;
+
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 70px 100px;
+    place-items: center;
+    height: 80%;
+    width: 70%;
+    padding: 5% 10%;
+    margin: 100px 0;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      padding:0;
+    }
+
+    .skill-card-unit {
+      height: 100%;
+      width: 100%;
+      min-height: 150px;
+      background-color: var(--box-color);
+      box-shadow: var(--box-shadow);
+      border-radius: 7px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+      margin: 0 auto;
+
+      span {
+        font-size: 20px !important;
+      }
+
+      .tech-icon {
+        width: 80px;
+        height: 80px;
+        box-shadow: -2px 0px 16px 5px rgba(0, 0, 0, 0.322);
+        border-radius: 50%;
+        background-color: var(--box-color);
+        // box-shadow: var(--box-shadow);
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 40px;
+          height: 35px;
+        }
+      }
+    }
+  }
+}

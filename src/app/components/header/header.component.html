@@ -1,0 +1,23 @@
+<nav class="darkMode" [ngClass]="{'small-header': scrollPos}">
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn"></label>
+  <div class="logo-container">
+    <img src="../../../assets/img/icons/LogoMakr.png" alt="">
+  </div>
+  <ul #menu>
+    <li><a href="#">Home</a></li>
+    <li><a href="#about">About me</a></li>
+    <li><a href="#work">Work</a></li>
+    <fa-icon class="fas fa-adjust toggle" [icon]="faAdjust " (click)="switchTheme()">{{ theme === "light-theme" ?
+      "Switch to dark" : "Switch to light" }}</fa-icon>
+    <!-- <button class="toggle" (click)="switchTheme()">
+      {{ theme === "light-theme" ? "Switch to dark" : "Switch to light" }}
+    </button> -->
+  </ul>
+  <div class="hamburger">
+    <div class="slice"></div>
+    <div class="slice"></div>
+    <div class="slice"></div>
+  </div>
+
+</nav>

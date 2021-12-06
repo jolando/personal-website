@@ -1,0 +1,26 @@
+<section id="work">
+  <div class="btn-container">
+    <button (click)="showAll()">All</button>
+    <button (click)="showCategory('angular')">Angular</button>
+    <button (click)="showCategory('js')">JS</button>
+  </div>
+
+  <div
+    class="container"
+    [ngsRevealSet]="{ reset: true }"
+    [ngsSelector]="'.project-unit'"
+  >
+    <div
+      #card
+      class="project-unit"
+      *ngFor="let project of this.clearedProjects"
+    >
+      <img src="" alt="" />
+      <div class="overlay">
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+        <button>Try out</button>
+      </div>
+    </div>
+  </div>
+</section>

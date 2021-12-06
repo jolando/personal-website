@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, Renderer2} from '@angular/core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,37 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'personal';
+  title = 'Rehmann';
+  faCoffee = faCoffee;
+
+
+  theme: Theme = 'light-theme';
+
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private renderer: Renderer2
+  ) {}
+
+  ngOnInit() {
+    this.initializeTheme();
+  }
+
+  switchTheme() {
+    this.document.body.classList.replace(
+      this.theme,
+      this.theme === 'light-theme'
+        ? (this.theme = 'dark-theme')
+        : (this.theme = 'light-theme')
+    );
+  }
+
+  initializeTheme = (): void =>
+    this.renderer.addClass(this.document.body, this.theme);
 }
+
+export type Theme = 'light-theme' | 'dark-theme';
+
+
+
+
+

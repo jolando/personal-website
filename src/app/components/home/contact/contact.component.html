@@ -1,0 +1,57 @@
+<div
+  class="container"
+  [ngsRevealSet]="{ reset: true }"
+  [ngsSelector]="'.form-control'"
+>
+  <div class="contact">
+    <h2>Contact me.</h2>
+    <p>
+      Get in touch via the form below, or by emailing <br /><br /><a
+        href="#"
+        class="email"
+        >kontakt@rehmann-peter.de</a
+      >
+    </p>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="form-input-unit">
+        <label for="">Name</label>
+        <input
+          class="form-control"
+          formControlName="name"
+          type="text"
+          placeholder="Enter your name"
+        />
+        <small class="error-message" *ngIf="name.invalid && name.touched"
+          >Name is required</small
+        >
+      </div>
+      <div class="form-input-unit">
+        <label for="">Email address</label>
+        <input
+          class="form-control"
+          formControlName="email"
+          type="text"
+          placeholder="Enter you Email address"
+        />
+        <small class="error-message" *ngIf="email.invalid && email.touched"
+          >Email is required</small
+        >
+      </div>
+      <div class="form-input-unit">
+        <label for="d">Message</label>
+        <textarea
+          class="form-control"
+          formControlName="message"
+          cols="30"
+          rows="10"
+          placeholder="Enter your message"
+        ></textarea>
+        <small class="error-message" *ngIf="message.invalid && message.touched"
+          >Mimimum length of 10 characters are required</small
+        >
+      </div>
+
+      <button type="submit" [disabled]="contactForm.invalid">Send</button>
+    </form>
+  </div>
+</div>

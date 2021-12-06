@@ -1,0 +1,62 @@
+section {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  color: var(--text-color);
+  background-color: var(--background-color-sec);
+  scroll-snap-align: start;
+  scroll-margin-top: 60px;
+  padding: 100px 0;
+  width: 100%;
+
+  .btn-container {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-unit {
+    position: relative;
+    background-color: rgba(79, 80, 79, 0.445);
+
+    img {
+      display: block;
+      min-height: 35vh;
+      width: 100%;
+      background-size: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0 0 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      z-index: 1;
+      background-color: var(--background-color-sec);
+      color: var(--text-color);
+      transition: 225ms ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    max-width: 80%;
+    min-height: 70vh;
+    text-align: center;
+
+    gap: 10px;
+    width: 100%;
+  }
+}
