@@ -9,7 +9,6 @@ section {
   scroll-snap-align: start;
   scroll-margin-top: 60px;
 
-
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -17,19 +16,23 @@ section {
     gap: 70px 100px;
     place-items: center;
     height: 80%;
-    width: 70%;
-    padding: 5% 10%;
-    margin: 100px 0;
+    width: 100%;
+    // padding: 5% 10%;
+    margin: 100px 15%;
+
+    @media (max-width: 1224px) {
+      grid-template-columns: 1fr 1fr;
+    }
 
     @media (max-width: 900px) {
       grid-template-columns: 1fr;
-      padding:0;
     }
 
     .skill-card-unit {
       height: 100%;
       width: 100%;
       min-height: 150px;
+
       background-color: var(--box-color);
       box-shadow: var(--box-shadow);
       border-radius: 7px;

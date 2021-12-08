@@ -1,18 +1,18 @@
 .light-theme {
-  --background-color: #aaa6a62d;
-  --background-color-sec: #dad6d68c;
+  --background-color: #e2dada8f;
+  --background-color-sec: #eee8e8;
   --text-color: #1a1a1a;
-  --box-color: #fff;
-  --button-color: teal;
+  --box-color: rgb(255, 255, 255);
+  --button-color: #5683cd;
   --box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme {
   --background-color: #1a1a1a;
-  --background-color-sec: rgba(27, 25, 25, 0.842);
+  --background-color-sec: #272626;
   --text-color: #f5f5f5;
   --box-color: #2b2b2b;
-  --button-color: rgb(0, 128, 128);
+  --button-color: #5683cd;
   --box-shadow: 0 15px 25px rgba(218, 218, 218, 0.075);
 }
 
@@ -55,15 +55,13 @@ p {
   font-size: 20px;
 }
 
-button {
-  border: 2px solid transparent;
+.button {
+  border: none;
   padding: 7px 30px;
-
   cursor: pointer;
   font-size: 20px;
   background-color: var(--button-color);
   color: var(--text-color);
-  transition: top 300ms;
   transition: all 125ms ease-out;
   &:hover {
     background-color: rgba(0, 0, 0, 0.226);
@@ -87,5 +85,16 @@ button {
   justify-content: center;
 }
 
+.fade-in {
+  -webkit-animation: fadein 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fadein 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
 
-
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

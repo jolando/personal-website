@@ -59,25 +59,36 @@
 
       input {
         height: 40px;
+        border-radius: 3px;
         color: var(--text-color);
       }
       textarea {
-        height: 140px;
-        resize: none;
+        height: 120px;
+        min-height: 90px;
+        max-height: 500px;
+        resize: vertical;
+        border-radius: 3px;
         color: var(--text-color);
       }
     }
 
     .submit-btn {
       display: flex;
-      justify-content: flex-end;
       margin-left: auto;
+      border: none;
+      padding: 7px 30px;
 
-      button {
-        &:hover {
-          opacity: 0.86;
-          cursor: pointer;
-        }
+      cursor: pointer;
+      font-size: 20px;
+      background-color: var(--button-color);
+      color: var(--text-color);
+
+      transition: all 125ms ease-out;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.226);
+      }
+      &:disabled {
+        background-color: rgba(0, 0, 0, 0.315);
       }
     }
   }
@@ -94,5 +105,5 @@
 // }
 
 .form-control.ng-touched.ng-valid {
-  border: 1px solid rgba(15, 201, 15, 0.185) !important;
+  border: 1px solid rgba(15, 201, 15, 0.445) !important;
 }

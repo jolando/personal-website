@@ -13,7 +13,7 @@ section {
   width: 100%;
 
   .btn-container {
-    width: 75%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,13 +21,20 @@ section {
 
   .project-unit {
     position: relative;
+
     background-color: rgba(79, 80, 79, 0.445);
 
     img {
       display: block;
+      height: 100%;
       min-height: 35vh;
+      max-height: 30vh;
       width: 100%;
       background-size: cover;
+      object-fit: cover;
+    }
+    button {
+      margin-top: 20px;
     }
 
     .overlay {
@@ -37,23 +44,39 @@ section {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      opacity: 0;
+      opacity: 0.6;
       z-index: 1;
       background-color: var(--background-color-sec);
       color: var(--text-color);
       transition: 225ms ease-in-out;
 
+      button {
+        opacity: 0;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
       &:hover {
+        transition: 225ms ease-in-out;
         opacity: 1;
+        h2 {
+          transform: translateY(-5px);
+          transition: 225ms ease-in-out;
+        }
+        button {
+          opacity: 1;
+        }
       }
     }
   }
 
   .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     max-width: 80%;
-    min-height: 70vh;
+    height: 70vh;
     text-align: center;
 
     gap: 10px;

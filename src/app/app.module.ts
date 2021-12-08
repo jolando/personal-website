@@ -12,7 +12,7 @@ import { DataprivacyComponent } from './components/dataprivacy/dataprivacy.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContactComponent } from './components/home/contact/contact.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
-import { ProjectsComponent } from './components/home/projects/projects.component';
+
 import { AboutComponent } from './components/home/about/about.component';
 import { WorkComponent } from './components/home/work/work.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,7 +42,6 @@ import { NgsRevealModule } from 'ngx-scrollreveal';
     DataprivacyComponent,
     ContactComponent,
     ProgressBarComponent,
-    ProjectsComponent,
     AboutComponent,
     WorkComponent,
     SkillsComponent,
@@ -64,7 +63,8 @@ import { NgsRevealModule } from 'ngx-scrollreveal';
     MatIconModule,
     MatCardModule,
 
-   NgsRevealModule
+
+    NgsRevealModule
   ],
   exports: [
     MatButtonModule,
@@ -77,4 +77,4 @@ import { NgsRevealModule } from 'ngx-scrollreveal';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

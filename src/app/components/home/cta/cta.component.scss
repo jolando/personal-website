@@ -5,14 +5,20 @@ section {
   color: var(--text-color);
   scroll-snap-align: start;
   scroll-margin-top: 60px;
+  overflow: hidden;
 
-  .curve {
-    background-color: var(--background-color-sec);
-
-    @media (max-width: 900px) {
-      height: 100vh;
-    }
+  svg {
+    position: absolute;
+    left: -500px;
+    right: -500px;
+    top: -10%;
+    transform: rotate(13deg);
+    overflow-x: hidden;
+    min-height: 150vh;
   }
+
+  // .curve {
+  // }
 
   .container {
     height: 200px;
@@ -22,34 +28,25 @@ section {
 
   .personal-picture {
     display: block;
-    border-radius: 100%;
     position: absolute;
     bottom: 25%;
-    left: 62%;
-
+    right: 15%;
+    background-color: rgba(255, 0, 0, 0.109);
+    height: 100%;
     width: 100%;
     max-width: 500px;
     max-height: 500px;
-    height: auto;
-    object-fit: contain;
-    // height: 500px;
 
-    @media (max-width: 930px) {
+    @media (max-width: 1224px) {
       bottom: 0 !important;
-
       left: 50%;
       transform: translateX(-50%) !important;
       border-radius: 0;
+      max-height: 35vh;
     }
   }
 
-  @media (max-width: 1919px) {
-    .div {
-      background-size: contain;
-    }
-  }
-
-  span {
+  .cta-link {
     display: flex;
     align-items: center;
     gap: 31px;
@@ -67,182 +64,65 @@ section {
       font-size: 20px;
     }
 
-    @media (max-width: 930px) {
+    @media (max-width: 1224px) {
       display: none;
     }
   }
 
-  div.curve {
-    height: 80vh;
-    width: 100%;
-
-    object-fit: cover;
-    background-position: bottom left;
-    background-size: cover;
-  }
-
   .header-container {
     position: absolute;
-    top: 33%;
+    bottom: 36vh;
     left: 15%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: auto;
-    // max-width: 630px;
 
-    @media (max-width: 930px) {
-      text-align: center;
-      right: 50px;
-      top: 140px;
+    h1 {
+      font-size: clamp(50px, 4vw, 90px);
+      line-height: 100%;
+      color: white;
+    }
 
-      h1 {
-        display: flex;
-        flex-shrink: 1;
-        // font-size: minmax(10px, 14rem);
-        // font-size: 40px;
-        font-size: 5vw;
+    span {
+      font-size: 30px;
+
+      @media (max-width: 1224px) {
+        white-space: nowrap;
       }
     }
 
-    button {
-      margin-top: 20px;
+    @media (max-width: 1224px) {
+      bottom: 60vh;
+      text-align: center;
+      left: 50%;
+      transform: translateX(-50%) !important;
+
+      border-radius: 0;
     }
-  }
-}
 
-// .chevron {
-//   width: 300px;
-//   color: red;
-//   height: 22px;
-// }
+    a {
+      display: block;
+      text-align: center;
+      border: 2px solid transparent;
+      padding: 7px 30px;
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 20px;
+      border: 2px solid white;
+      // background-color: var(--button-color);
+      color: white;
+      transition: all 125ms ease-out;
+      max-width: 200px;
+      margin-top: 10px;
 
-.color-change-3x {
-  // -webkit-animation: colorchange3x 4s linear infinite alternate both;
-  animation: colorchange3x 1ss infinite;
-}
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.226);
+      }
 
-.fade-in {
-  -webkit-animation: fadein 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fadein 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-
-.slide-in-blurred-right {
-  -webkit-animation: slideinblurredright 0.6s cubic-bezier(0.23, 1, 0.32, 1)
-    both;
-  animation: slideinblurredright 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
-}
-
-.tracking-in-expand {
-  -webkit-animation: trackinginexpand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
-    both;
-  animation: trackinginexpand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-}
-
-@-webkit-keyframes colorchange3x {
-  0% {
-    color: #19dcea !important;
-  }
-  50% {
-    color: #b22cff !important;
-  }
-  100% {
-    color: #ea2222 !important;
-  }
-}
-@keyframes colorchange3x {
-  0% {
-    color: #19dcea !important;
-  }
-  50% {
-    color: #b22cff !important;
-  }
-  100% {
-    color: #ea2222 !important;
-  }
-}
-
-@keyframes trackinginexpand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes trackinginexpand {
-  0% {
-    letter-spacing: -0.5em;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.6;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes slideinblurredright {
-  0% {
-    -webkit-transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-    transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
-    -webkit-transform-origin: 0% 50%;
-    transform-origin: 0% 50%;
-    -webkit-filter: blur(40px);
-    filter: blur(40px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) scaleY(1) scaleX(1);
-    transform: translateX(0) scaleY(1) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-@keyframes slideinblurredright {
-  0% {
-    -webkit-transform: translateX(20px) scaleX(1.5);
-    transform: translateX(20px) scaleX(1.5);
-    -webkit-transform-origin: 0% 10%;
-    transform-origin: 0% 10%;
-    -webkit-filter: blur(20px);
-    filter: blur(20px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateX(0) scaleX(1);
-    transform: translateX(0) scaleX(1);
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    -webkit-filter: blur(0);
-    filter: blur(0);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+      @media (max-width: 930px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+      }
+    }
   }
 }
 
@@ -256,13 +136,9 @@ section {
   100% {
     opacity: 0.5;
   }
-  // to { opacity: 1; }
 }
 
 .fe-pulse {
   animation: pulse 5s infinite;
   cursor: pointer;
-  // animation-name: pulse;
-  // animation-duration: 1s;
-  // animation-iteration-count: infinite;
 }

@@ -1,4 +1,5 @@
 <div
+  id="contact"
   class="container"
   [ngsRevealSet]="{ reset: true }"
   [ngsSelector]="'.form-control'"
@@ -12,16 +13,24 @@
         >kontakt@rehmann-peter.de</a
       >
     </p>
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <form
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+      action="http://peter-rehmann.developerakademie.com/personal/send_mail.php"
+      method="POST"
+    >
       <div class="form-input-unit">
         <label for="">Name</label>
         <input
+          name="name"
           class="form-control"
           formControlName="name"
           type="text"
           placeholder="Enter your name"
         />
-        <small class="error-message" *ngIf="name.invalid && name.touched"
+        <small
+          class="error-message fade-in"
+          *ngIf="name.invalid && name.touched"
           >Name is required</small
         >
       </div>
@@ -33,25 +42,32 @@
           type="text"
           placeholder="Enter you Email address"
         />
-        <small class="error-message" *ngIf="email.invalid && email.touched"
+        <small
+          class="error-message fade-in"
+          *ngIf="email.invalid && email.touched"
           >Email is required</small
         >
       </div>
       <div class="form-input-unit">
         <label for="d">Message</label>
         <textarea
+          name="message"
           class="form-control"
           formControlName="message"
           cols="30"
           rows="10"
           placeholder="Enter your message"
         ></textarea>
-        <small class="error-message" *ngIf="message.invalid && message.touched"
+        <small
+          class="error-message fade-in"
+          *ngIf="message.invalid && message.touched"
           >Mimimum length of 10 characters are required</small
         >
       </div>
 
-      <button type="submit" [disabled]="contactForm.invalid">Send</button>
+      <button class="submit-btn" type="submit" [disabled]="contactForm.invalid">
+        Send
+      </button>
     </form>
   </div>
 </div>

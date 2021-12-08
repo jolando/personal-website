@@ -20,39 +20,33 @@ export class WorkComponent implements OnInit {
 
   projects = [
     {
-      title: 'el pollo loco',
-      description: 'loremsdfsdfsd',
-      src: '../../../assets/img/icons/pexels-miahil-tudor-3842444.jpg',
+      title: 'simple-crm',
+      description: 'simples Nutzerverwaltungssystem',
+      src: '../../../../assets/img/project/src.PNG',
       main: 'angular',
     },
     {
-      title: 'kochwelt',
-      description: 'loremsdfsdfsd',
-      src: '../../../assets/img/icons/pexels-miahil-tudor-3842444.jpg',
+      title: 'Ring of fire',
+      description: 'simples Kartenspiel',
+      src: '../../../../assets/img/project/ringoffire.jpg',
       main: 'angular',
     },
     {
-      title: 'ring of fire',
-      description: 'loremsdfsdfsd',
-      src: 'sdfsdfd',
-      main: 'angular',
-    },
-    {
-      title: 'el pollo loco',
-      description: 'loremsdfsdfsd',
-      src: '../../../assets/img/icons/pexels-miahil-tudor-3842444.jpg',
-      main: 'angular',
-    },
-    {
-      title: 'kochwelt',
-      description: 'loremsdfsdfsd',
-      src: '../../../assets/img/icons/pexels-miahil-tudor-3842444.jpg',
+      title: 'El pollo loco',
+      description: 'simple OOP basiertes jump&run',
+      src: '../../../../assets/img/project/elpolloloco.png',
       main: 'js',
     },
     {
-      title: 'ring of fire',
-      description: 'loremsdfsdfsd',
-      src: '../../../assets/img/pexels-raka-miftah-4253484.jpg',
+      title: 'Join',
+      description: 'Kanban-Board Gruppenarbeit',
+      src: '../../../../assets/img/project/join.png',
+      main: 'js',
+    },
+    {
+      title: '...',
+      description: '...',
+      src: '',
       main: 'js',
     },
   ];

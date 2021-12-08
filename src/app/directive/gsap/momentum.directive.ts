@@ -23,7 +23,7 @@ export class MomentumDirective implements OnInit {
   constructor(
     private el: ElementRef<HTMLElement>,
     @Inject(DOCUMENT) private document: Document
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     requestAnimationFrame(() => this.smoothScroll());
@@ -57,9 +57,8 @@ export class MomentumDirective implements OnInit {
     const containerMargin = '200px'; // optional
 
     if (this.elementInitialized) {
-      this.document.body.style.height = `calc(${
-        this.el.nativeElement.getBoundingClientRect().height
-      }px + ${containerMargin})`;
+      this.document.body.style.height = `calc(${this.el.nativeElement.getBoundingClientRect().height
+        }px + ${containerMargin})`;
     }
   }
 
