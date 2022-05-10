@@ -1,0 +1,11 @@
+.container-imprint {
+  min-height: calc(100vh - 150px);
+  padding: 10em 15%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  @media (max-width: 767px) {
+    min-height: 110vh;
+    padding: 10em 5% !important;
+  }
+}

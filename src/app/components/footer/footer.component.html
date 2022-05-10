@@ -1,13 +1,21 @@
 <footer (scroll)="onWindowScroll()">
-  <div class="footer-content" [ngsReveal]="{ reset: true }">
+  <div class="footer-content">
     <div class="imprint-links">
-      <a routerLink="imprint">Impressum</a>
-      <a routerLink="dataprivacy">Datenschutz</a>
+      <a routerLink="imprint" (click)="scrollToTop()">Imprint</a>
+      <a routerLink="dataprivacy" (click)="scrollToTop()">Data Protection</a>
     </div>
-    <div class="footer-links" [ngsReveal]="{ reset: true }">
-      <fa-icon class="fab fa-linkedin black" [icon]="faGithub"></fa-icon>
-      <fa-icon class="fab fa-linkedin black" [icon]="faXing"></fa-icon>
-      <fa-icon class="fab fa-linkedin black" [icon]="faLinkedin"></fa-icon>
+    <span class="copyright"> © 2022 Peter Rehmann</span>
+    <div class="footer-links">
+      <a target="_blank" href="https://github.com/p-rhmn"
+        ><fa-icon class="fab faGithub black" [icon]="faGithub"></fa-icon
+      ></a>
+      <!-- <a href="https://www.xing.com" target="_blank">
+        <fa-icon class="fab fa-linkedin black" [icon]="faXing"></fa-icon
+      ></a>
+
+      <a href="https://de.linkedin.com" target="_blank"
+        ><fa-icon class="fab fa-linkedin black" [icon]="faLinkedin"></fa-icon
+      ></a> -->
     </div>
   </div>
 </footer>

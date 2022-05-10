@@ -15,8 +15,7 @@ gsap.registerPlugin(ScrollTrigger);
   styleUrls: ['./work.component.scss'],
 })
 export class WorkComponent implements OnInit {
-
-  @ViewChild('card', { static: true }) projectCard: ElementRef<HTMLDivElement>
+  @ViewChild('card', { static: true }) projectCard: ElementRef<HTMLDivElement>;
 
   projects = [
     {
@@ -56,8 +55,7 @@ export class WorkComponent implements OnInit {
 
   clearedProjects = [];
 
-
-  constructor(public elementRef: ElementRef) { }
+  constructor(public elementRef: ElementRef) {}
 
   ngOnInit(): void {
     this.clearedProjects = this.projects;
@@ -68,34 +66,14 @@ export class WorkComponent implements OnInit {
     console.log(this.clearedProjects);
   }
   showCategory(category: string) {
-    this.clearedProjects = this.projects.filter(project => project.main === category);
+    this.clearedProjects = this.projects.filter(
+      (project) => project.main === category
+    );
     console.log(this.clearedProjects);
   }
 
-  // showAll() {
-  //   this.all = true;
-  //   this.selected = false;
-  // }
-
-  // showCorrectProject(lan: string): void {
-
-  //   if (this.projects) {
-  //     this.clearedProjects = [];
-
-  //     let found = this.projects.filter(p => p.main === lan)
-  //     this.clearedProjects.push(found)
-  //     console.log(found, this.clearedProjects)
-
-
-
-  //   }
-  //   this.all = false;
-  //   this.selected = true;
-  // }
-
 
   initScrollAnimations(): void {
-
     gsap.to(this.elementRef.nativeElement, {
       ScrollTrigger: {
         trigger: this.elementRef.nativeElement,
@@ -106,7 +84,7 @@ export class WorkComponent implements OnInit {
         height: 250,
 
         start: '110% center',
-      }
+      },
     });
   }
 }

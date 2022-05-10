@@ -7,6 +7,12 @@ section {
   scroll-margin-top: 60px;
   overflow: hidden;
 
+  g {
+    @media (max-width: 640px) {
+      display: none;
+    }
+  }
+
   svg {
     position: absolute;
     left: -500px;
@@ -14,11 +20,8 @@ section {
     top: -10%;
     transform: rotate(13deg);
     overflow-x: hidden;
-    min-height: 150vh;
+    min-height: 150%;
   }
-
-  // .curve {
-  // }
 
   .container {
     height: 200px;
@@ -51,7 +54,7 @@ section {
     align-items: center;
     gap: 31px;
     position: absolute;
-    top: 90%;
+    top: 94%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 25px;
@@ -75,9 +78,9 @@ section {
     left: 15%;
 
     h1 {
-      font-size: clamp(50px, 4vw, 90px);
+      font-size: clamp(50px, 4vw, 120px);
       line-height: 100%;
-      color: white;
+      color: var(--text-color-reverse);
     }
 
     span {
@@ -88,12 +91,11 @@ section {
       }
     }
 
-    @media (max-width: 1224px) {
-      bottom: 60vh;
+    @media (max-width: 940px) {
+      top: 25vh;
       text-align: center;
       left: 50%;
       transform: translateX(-50%) !important;
-
       border-radius: 0;
     }
 
@@ -106,21 +108,20 @@ section {
       cursor: pointer;
       font-size: 20px;
       border: 2px solid white;
-      // background-color: var(--button-color);
       color: white;
       transition: all 125ms ease-out;
       max-width: 200px;
       margin-top: 10px;
 
       &:hover {
-        background-color: rgba(0, 0, 0, 0.226);
+        background-color: rgba(206, 206, 206, 0.226);
       }
 
-      @media (max-width: 930px) {
+      @media (max-width: 940px) {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: auto;
+        margin: 40px auto;
       }
     }
   }

@@ -12,8 +12,6 @@ import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
-export type Theme = 'light-theme' | 'dark-theme';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -25,14 +23,14 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('menu', { static: true }) menu: ElementRef<HTMLUListElement>;
 
-  theme: Theme = 'light-theme';
+  theme: String;
   isActive: boolean = true;
   offset: boolean = false;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private renderer: Renderer2
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.initializeTheme();
@@ -45,23 +43,42 @@ export class HeaderComponent implements OnInit {
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       0;
-    // number > 100 ? (this.scrollPos = true) : (this.scrollPos = false);
-    if (number > 100) {
-      this.offset = true;
-    } else {
-      this.offset = false;
-    }
+    number > 100 ? (this.offset = true) : (this.offset = false);
+  }
+
+  scrollToTop() {
+    window.scroll(0, 0);
   }
 
   switchTheme() {
-    this.document.body.classList.replace(
-      this.theme,
-      this.theme === 'light-theme'
-        ? (this.theme = 'dark-theme')
-        : (this.theme = 'light-theme')
-    );
+    console.log(this.theme);
+
+    if (localStorage.getItem('theme') === 'light-theme') {
+      this.document.body.classList.add('dark-theme');
+      this.document.body.classList.remove('light-theme');
+      localStorage.setItem('theme', 'dark-theme');
+      this.theme = 'dark-theme';
+    } else {
+      this.document.body.classList.remove('dark-theme');
+      this.document.body.classList.add('light-theme');
+      localStorage.setItem('theme', 'light-theme');
+      this.theme = 'light-theme';
+    }
   }
 
-  initializeTheme = (): void => this.renderer.addClass(this.document.body, this.theme);
-
+  initializeTheme() {
+    if (!localStorage.getItem('theme')) {
+      localStorage.setItem('theme', 'light-theme');
+      this.document.body.classList.add('light-theme');
+    } else {
+      this.renderer.addClass(
+        this.document.body,
+        localStorage.getItem('theme') === 'light-theme'
+          ? 'light-theme'
+          : 'dark-theme'
+      );
+    
+      this.theme = localStorage.getItem('theme');
+    }
+  }
 }

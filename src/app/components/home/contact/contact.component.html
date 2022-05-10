@@ -8,17 +8,21 @@
     <h2>Contact me.</h2>
     <p>
       Get in touch via the form below, or by emailing <br /><br /><a
-        href="#"
+        href="mailto:kontakt@rehmann-peter.de"
         class="email"
         >kontakt@rehmann-peter.de</a
       >
     </p>
+
     <form
-      [formGroup]="contactForm"
-      (ngSubmit)="onSubmit()"
-      action="http://peter-rehmann.developerakademie.com/personal/send_mail.php"
+      #form
+      action="https://formsubmit.co/d42d9054c2e6fc273ebfb16a05983164 "
       method="POST"
+      [formGroup]="contactForm"
     >
+      <input type="hidden" name="_next" value="https://rehmann-peter.de" />
+      <input type="hidden" name="_subject" value="New submission!" />
+      <input type="hidden" name="_captcha" value="false" />
       <div class="form-input-unit">
         <label for="">Name</label>
         <input
@@ -31,12 +35,17 @@
         <small
           class="error-message fade-in"
           *ngIf="name.invalid && name.touched"
-          >Name is required</small
+          >{{
+            name.hasError("required")
+              ? "Name is required"
+              : "At least 3 characters"
+          }}</small
         >
       </div>
       <div class="form-input-unit">
         <label for="">Email address</label>
         <input
+          name="email"
           class="form-control"
           formControlName="email"
           type="text"
@@ -45,7 +54,11 @@
         <small
           class="error-message fade-in"
           *ngIf="email.invalid && email.touched"
-          >Email is required</small
+          >{{
+            email.hasError("required")
+              ? "Email is required"
+              : "Please enter a valid email"
+          }}</small
         >
       </div>
       <div class="form-input-unit">
@@ -61,11 +74,15 @@
         <small
           class="error-message fade-in"
           *ngIf="message.invalid && message.touched"
-          >Mimimum length of 10 characters are required</small
+          >{{
+            message.hasError("required")
+              ? "Message is required"
+              : "Should be at least 10 characters long"
+          }}</small
         >
       </div>
 
-      <button class="submit-btn" type="submit" [disabled]="contactForm.invalid">
+      <button class="submit-btn" type="submit" (click)="onSubmit(form)" [disabled]="!contactForm.valid">
         Send
       </button>
     </form>

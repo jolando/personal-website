@@ -1,4 +1,4 @@
-<section id="work">
+<section id="work" #work>
   <div
     class="btn-container"
     [ngsRevealSet]="{ reset: true }"
@@ -17,8 +17,9 @@
     >
       <img src="{{ project.src }}" alt="" />
       <div class="overlay">
-        <h2>{{ project.title }}</h2>
-        <p>{{ project.description }}</p>
+        <!-- <img src="{{project.src}}" alt="" /> -->
+        <h2 class="project-title">{{ project.title }}</h2>
+        <p class="project-desc">{{ project.description }}</p>
         <button class="button">Try out</button>
       </div>
     </div>

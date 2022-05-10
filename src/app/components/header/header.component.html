@@ -1,69 +1,41 @@
-<!-- <nav class="darkMode" [ngClass]="{ 'small-header': scrollPos }">
-  <input type="checkbox" id="check" />
-  <label for="check" class="checkbtn"></label>
-  <div class="logo-container fade-in">
-    <img src="../../../assets/img/icons/LogoMakr-7GYXqK.png" alt="" />
-  </div>
-  <div class="link-container" #menu>
-    <a class="fade-in" href="#">Home</a>
-    <a class="fade-in" href="#about">About me</a>
-    <a class="fade-in" href="#work">Work</a>
-    <fa-icon
-      *ngIf="theme === 'light-theme'"
-      class="fas fa-adjust toggle"
-      [icon]="faAdjust"
-      (click)="switchTheme()"
-    ></fa-icon>
-    <button class="toggle" (click)="switchTheme()">
-      {{ theme === "light-theme" ? "Switch to dark" : "Switch to light" }}
-    </button>
-  </div>
-  <div class="hamburger">
-    <div class="slice"></div>
-    <div class="slice"></div>
-    <div class="slice"></div>
-  </div>
-</nav> -->
-
 <header [class.is-scrolling]="offset">
   <div class="container">
-    <img
-      class="logo"
-      src="../../../assets/img/icons/LogoMakr-7GYXqK.png"
-      alt=""
-    />
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About me</a>
-      <a href="#">Projects</a>
+    <a routerLink="" class="logo">P.R </a>
 
-      <button
-        class="toggle light-btn"
-        [class.dark-btn]="theme === 'dark-theme'"
+    <nav>
+      <span
+        *ngIf="theme === 'light-theme'"
+        class="toggle theme-btn light-btn"
+        (click)="switchTheme()"
+      >
+        {{ theme === "dark-theme" ? "Light" : "Dark" }}
+      </span>
+      <span
+        *ngIf="theme === 'dark-theme'"
+        class="toggle theme-btn dark-btn"
         (click)="switchTheme()"
       >
         {{ theme === "light-theme" ? "Dark" : "Light" }}
-      </button>
+      </span>
+      <a routerLink="" (click)="scrollToTop()">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
     </nav>
 
-    <button
-      class="hamburger"
-      (click)="isActive = !isActive"
-      [ngClass]="isActive ? '' : 'is-active'"
-    >
+    <a class="hamburger" id="nav-icon4" (click)="isActive = !isActive">
       <div class="bar"></div>
-    </button>
+    </a>
   </div>
 </header>
 <nav class="mobile-nav" [ngClass]="isActive ? '' : 'is-active'">
-  <a href="#">Home</a>
-  <a href="#">About me</a>
-  <a href="#">Projects</a>
-  <button
-    class="toggle light-btn"
+  <a routerLink="" (click)="scrollToTop(); isActive = !isActive">Home</a>
+  <a href="#about" (click)="isActive = !isActive">About</a>
+  <a href="#work" (click)="isActive = !isActive">Projects</a>
+  <a
+    class="toggle theme-btn light-btn"
     [class.dark-btn]="theme === 'dark-theme'"
     (click)="switchTheme()"
   >
-    {{ theme === "light-theme" ? "Dark" : "Light" }}
-  </button>
+    {{ theme === "light-theme" ? "Light" : "Dark" }}
+  </a>
 </nav>

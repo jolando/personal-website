@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Renderer2 } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,8 +26,12 @@ import { SkillsComponent } from './components/home/skills/skills.component';
 import { FadeInAnimationDirective } from './directive/gsap/fade-in.directive';
 import { MomentumDirective } from './directive/gsap/momentum.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { LayoutModule } from '@angular/cdk/layout';
 import { NgsRevealModule } from 'ngx-scrollreveal';
+import { HttpClientModule } from '@angular/common/http';
+import { NgToastModule } from 'ng-angular-popup';
+
+
 
 // import { CoreDirective } from './directive/gsap/core.directive';
 
@@ -47,7 +51,6 @@ import { NgsRevealModule } from 'ngx-scrollreveal';
     SkillsComponent,
     FadeInAnimationDirective,
     MomentumDirective,
-
   ],
   imports: [
     BrowserModule,
@@ -55,16 +58,17 @@ import { NgsRevealModule } from 'ngx-scrollreveal';
     FontAwesomeModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    LayoutModule,
     FormsModule,
-
+    NgToastModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    HttpClientModule,
+    NgsRevealModule,
 
-
-    NgsRevealModule
   ],
   exports: [
     MatButtonModule,
@@ -73,8 +77,11 @@ import { NgsRevealModule } from 'ngx-scrollreveal';
     MatIconModule,
     MatCardModule,
     MomentumDirective,
+
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

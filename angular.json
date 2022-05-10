@@ -34,7 +34,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/scrollreveal/dist/scrollreveal.js"
+              "node_modules/scrollreveal/dist/scrollreveal.js",
+              "node_modules/angular-dark-mode/angular-dark-mode.js"
             ]
           },
           "configurations": {
@@ -103,7 +104,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+
+            ]
           }
         }
       }

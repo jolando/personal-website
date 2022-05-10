@@ -10,25 +10,21 @@ gsap.registerPlugin(ScrollTrigger);
 @Component({
   selector: 'app-cta',
   templateUrl: './cta.component.html',
-  styleUrls: ['./cta.component.scss']
+  styleUrls: ['./cta.component.scss'],
 })
 export class CtaComponent implements OnInit {
   faChevronDown = faChevronDown;
 
+  @ViewChild('personalImg', { static: true })
+  personalImg: ElementRef<HTMLImageElement>;
 
-  @ViewChild('personalImg', {static: true}) personalImg: ElementRef<HTMLImageElement>
-  // @ViewChild('menu', {static: true}) menu: ElementRef<HTMLDivElement>
-  // @ViewChild('menu', {static: true}) menu: ElementRef<HTMLDivElement>
-
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.initScrollAnimations();
   }
 
-  initScrollAnimations():void {
-
+  initScrollAnimations(): void {
     gsap.to(this.personalImg.nativeElement, {
       ScrollTrigger: {
         trigger: this.personalImg.nativeElement,
@@ -38,20 +34,7 @@ export class CtaComponent implements OnInit {
         height: 250,
 
         start: '110% center',
-      }
+      },
     });
-    // gsap.to(this.imageSecond.nativeElement, {
-    //   scrollTrigger: {
-    //     trigger: this.imageSecond.nativeElement,
-    //     scrub: true,
-    //     start: '80% center',
-    //   } as gsap.plugins.ScrollTriggerInstanceVars,
-    //   duration: 1.1,
-    //   scale: 1.2,
-    //   height: 380,
-    // });
-
-
   }
-
 }
