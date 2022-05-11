@@ -12,7 +12,7 @@ export class FadeInAnimationDirective extends CoreDirective implements OnInit {
   }
 
   ngOnInit() {
-    // perform animation
+
     this.animateIn();
   }
 

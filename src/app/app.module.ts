@@ -30,8 +30,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NgsRevealModule } from 'ngx-scrollreveal';
 import { HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
-
-
+import { DarkmodeService } from './services/darkmode.service';
 
 // import { CoreDirective } from './directive/gsap/core.directive';
 
@@ -68,7 +67,6 @@ import { NgToastModule } from 'ng-angular-popup';
     MatCardModule,
     HttpClientModule,
     NgsRevealModule,
-
   ],
   exports: [
     MatButtonModule,
@@ -77,11 +75,8 @@ import { NgToastModule } from 'ng-angular-popup';
     MatIconModule,
     MatCardModule,
     MomentumDirective,
-
   ],
-  providers: [
-
-  ],
+  providers: [DarkmodeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,18 +4,18 @@
 
     <nav>
       <span
-        *ngIf="theme === 'light-theme'"
+        *ngIf="this.darkmodeService.theme === 'light-theme'"
         class="toggle theme-btn light-btn"
-        (click)="switchTheme()"
+        (click)="this.darkmodeService.switchTheme()"
       >
-        {{ theme === "dark-theme" ? "Light" : "Dark" }}
+        {{ this.darkmodeService.theme === "dark-theme" ? "Light" : "Dark" }}
       </span>
       <span
-        *ngIf="theme === 'dark-theme'"
+        *ngIf="this.darkmodeService.theme === 'dark-theme'"
         class="toggle theme-btn dark-btn"
-        (click)="switchTheme()"
+        (click)="this.darkmodeService.switchTheme()"
       >
-        {{ theme === "light-theme" ? "Dark" : "Light" }}
+        {{ this.darkmodeService.theme === "light-theme" ? "Dark" : "Light" }}
       </span>
       <a routerLink="" (click)="scrollToTop()">Home</a>
       <a href="#about">About</a>
@@ -33,9 +33,9 @@
   <a href="#work" (click)="isActive = !isActive">Projects</a>
   <a
     class="toggle theme-btn light-btn"
-    [class.dark-btn]="theme === 'dark-theme'"
-    (click)="switchTheme()"
+    [class.dark-btn]="this.darkmodeService.theme === 'dark-theme'"
+    (click)="this.darkmodeService.switchTheme()"
   >
-    {{ theme === "light-theme" ? "Light" : "Dark" }}
+    {{ this.darkmodeService.theme === "light-theme" ? "Light" : "Dark" }}
   </a>
 </nav>

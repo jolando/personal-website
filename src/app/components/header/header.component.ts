@@ -11,6 +11,7 @@ import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 
 import { HostListener } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { DarkmodeService } from 'src/app/services/darkmode.service';
 
 @Component({
   selector: 'app-header',
@@ -23,17 +24,19 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('menu', { static: true }) menu: ElementRef<HTMLUListElement>;
 
-  theme: String;
+
   isActive: boolean = true;
   offset: boolean = false;
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    public darkmodeService: DarkmodeService
   ) {}
 
   ngOnInit(): void {
-    this.initializeTheme();
+    this.darkmodeService.initializeTheme();
+    console.log('start')
   }
 
   @HostListener('window:scroll', [])
@@ -50,35 +53,35 @@ export class HeaderComponent implements OnInit {
     window.scroll(0, 0);
   }
 
-  switchTheme() {
-    console.log(this.theme);
+  // switchTheme() {
+  //   console.log(this.theme);
 
-    if (localStorage.getItem('theme') === 'light-theme') {
-      this.document.body.classList.add('dark-theme');
-      this.document.body.classList.remove('light-theme');
-      localStorage.setItem('theme', 'dark-theme');
-      this.theme = 'dark-theme';
-    } else {
-      this.document.body.classList.remove('dark-theme');
-      this.document.body.classList.add('light-theme');
-      localStorage.setItem('theme', 'light-theme');
-      this.theme = 'light-theme';
-    }
-  }
+  //   if (localStorage.getItem('theme') === 'light-theme') {
+  //     this.document.body.classList.add('dark-theme');
+  //     this.document.body.classList.remove('light-theme');
+  //     localStorage.setItem('theme', 'dark-theme');
+  //     this.theme = 'dark-theme';
+  //   } else {
+  //     this.document.body.classList.remove('dark-theme');
+  //     this.document.body.classList.add('light-theme');
+  //     localStorage.setItem('theme', 'light-theme');
+  //     this.theme = 'light-theme';
+  //   }
+  // }
 
-  initializeTheme() {
-    if (!localStorage.getItem('theme')) {
-      localStorage.setItem('theme', 'light-theme');
-      this.document.body.classList.add('light-theme');
-    } else {
-      this.renderer.addClass(
-        this.document.body,
-        localStorage.getItem('theme') === 'light-theme'
-          ? 'light-theme'
-          : 'dark-theme'
-      );
-    
-      this.theme = localStorage.getItem('theme');
-    }
-  }
+  // initializeTheme() {
+  //   if (!localStorage.getItem('theme')) {
+  //     localStorage.setItem('theme', 'light-theme');
+  //     this.document.body.classList.add('light-theme');
+  //   } else {
+  //     this.renderer.addClass(
+  //       this.document.body,
+  //       localStorage.getItem('theme') === 'light-theme'
+  //         ? 'light-theme'
+  //         : 'dark-theme'
+  //     );
+
+  //     this.theme = localStorage.getItem('theme');
+  //   }
+  // }
 }
