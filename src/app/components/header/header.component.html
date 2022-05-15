@@ -3,6 +3,9 @@
     <a routerLink="" class="logo">P.R </a>
 
     <nav>
+      <a routerLink="" (click)="scrollToTop()">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Projects</a>
       <span
         *ngIf="this.darkmodeService.theme === 'light-theme'"
         class="toggle theme-btn light-btn"
@@ -17,9 +20,6 @@
       >
         {{ this.darkmodeService.theme === "light-theme" ? "Dark" : "Light" }}
       </span>
-      <a routerLink="" (click)="scrollToTop()">Home</a>
-      <a href="#about">About</a>
-      <a href="#work">Projects</a>
     </nav>
 
     <a class="hamburger" id="nav-icon4" (click)="isActive = !isActive">

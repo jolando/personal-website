@@ -26,18 +26,17 @@ section {
     position: relative;
     box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.116);
-    // background-color: rgba(79, 80, 79, 0.445);
     backdrop-filter: blur(4px);
     border-radius: 15px;
-    min-height: 35vh;
-    max-height: 35vh;
+    min-height: 25vh;
+    max-height: 25vh;
 
     border-top: 1px solid rgba(255, 255, 255, 0.37);
     border-left: 1px solid rgba(255, 255, 255, 0.322);
 
     img {
-      min-height: 35vh;
-      max-height: 35vh;
+      min-height: 25vh;
+      max-height: 25vh;
       border-radius: 15px;
       width: 100%;
       background-size: cover;
@@ -49,8 +48,9 @@ section {
         }
       }
     }
-    button {
+    a {
       margin-top: 20px;
+      text-decoration: none;
     }
 
     .overlay {
@@ -64,8 +64,8 @@ section {
       transition: 400ms ease-in-out;
       opacity: 0.8;
       z-index: 1;
-      min-height: 35vh;
-      max-height: 35vh;
+      min-height: 25vh;
+      max-height: 25vh;
       background-color: var(--box-color);
       color: var(--text-color);
       transition: 225ms ease-in-out;

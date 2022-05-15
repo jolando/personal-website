@@ -34,6 +34,7 @@ export class DarkmodeService {
     console.log('end');
     if (!localStorage.getItem('theme')) {
       localStorage.setItem('theme', 'light-theme');
+      this.theme = localStorage.getItem('theme');
       this.document.body.classList.add('light-theme');
     } else {
       this.renderer.addClass(
@@ -42,8 +43,7 @@ export class DarkmodeService {
           ? 'light-theme'
           : 'dark-theme'
       );
-
-      this.theme = localStorage.getItem('theme');
     }
+    this.theme = localStorage.getItem('theme');
   }
 }

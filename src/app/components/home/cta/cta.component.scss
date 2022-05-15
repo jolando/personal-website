@@ -6,6 +6,9 @@ section {
   scroll-snap-align: start;
   scroll-margin-top: 60px;
   overflow: hidden;
+  @media (max-width: 640px) {
+    background-color: #3e71bf;
+  }
 
   g {
     @media (max-width: 640px) {

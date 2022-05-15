@@ -24,6 +24,12 @@ section {
       "profile-img profile-img about-text about-text"
       "about-seperate about-seperate about-seperate about-seperate"
       "about-unit1 about-unit2 about-unit3 about-unit4";
+
+    p {
+      font-size: 15px;
+      margin-top: 10px;
+    }
+
     @media (max-width: 900px) {
       width: 90%;
     }
@@ -59,18 +65,22 @@ section {
   .about-unit1 {
     grid-area: about-unit1;
     max-width: 300px;
+    height: 100%;
   }
   .about-unit2 {
     grid-area: about-unit2;
     max-width: 300px;
+    height: 100%;
   }
   .about-unit3 {
     grid-area: about-unit3;
     max-width: 300px;
+    height: 100%;
   }
   .about-unit4 {
     grid-area: about-unit4;
     max-width: 300px;
+    height: 100%;
   }
 
   @media (max-width: 1400px) {

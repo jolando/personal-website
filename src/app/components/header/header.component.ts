@@ -53,35 +53,4 @@ export class HeaderComponent implements OnInit {
     window.scroll(0, 0);
   }
 
-  // switchTheme() {
-  //   console.log(this.theme);
-
-  //   if (localStorage.getItem('theme') === 'light-theme') {
-  //     this.document.body.classList.add('dark-theme');
-  //     this.document.body.classList.remove('light-theme');
-  //     localStorage.setItem('theme', 'dark-theme');
-  //     this.theme = 'dark-theme';
-  //   } else {
-  //     this.document.body.classList.remove('dark-theme');
-  //     this.document.body.classList.add('light-theme');
-  //     localStorage.setItem('theme', 'light-theme');
-  //     this.theme = 'light-theme';
-  //   }
-  // }
-
-  // initializeTheme() {
-  //   if (!localStorage.getItem('theme')) {
-  //     localStorage.setItem('theme', 'light-theme');
-  //     this.document.body.classList.add('light-theme');
-  //   } else {
-  //     this.renderer.addClass(
-  //       this.document.body,
-  //       localStorage.getItem('theme') === 'light-theme'
-  //         ? 'light-theme'
-  //         : 'dark-theme'
-  //     );
-
-  //     this.theme = localStorage.getItem('theme');
-  //   }
-  // }
 }
