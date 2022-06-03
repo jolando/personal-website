@@ -1,27 +1,20 @@
 <section id="work" #work>
-  <div
-    class="btn-container"
-    [ngsRevealSet]="{ reset: true }"
-    [ngsSelector]="'button'"
-  >
-    <button class="button" (click)="showAll()">All</button>
-    <button class="button" (click)="showCategory('angular')">Angular</button>
-    <button class="button" (click)="showCategory('js')">JS</button>
-  </div>
-
-  <div class="container">
-    <div
-      [ngsReveal]="{ reset: true }"
-      class="project-unit"
-      *ngFor="let project of this.clearedProjects"
-    >
-      <img src="{{ project.src }}" alt="" />
-      <div class="overlay">
-        <!-- <img src="{{project.src}}" alt="" /> -->
-        <h2 class="project-title">{{ project.title }}</h2>
-        <p class="project-desc">{{ project.description }}</p>
-        <a href="{{ project.link }}" class="button">Try out</a>
-      </div>
+    <h3>My projects</h3>
+    <div class="btn-container" [ngsRevealSet]="{ reset: true }" [ngsSelector]="'button'">
+        <button class="button" (click)="showAll()">All</button>
+        <button class="button" (click)="showCategory('angular')">Angular</button>
+        <button class="button" (click)="showCategory('js')">JS</button>
     </div>
-  </div>
+
+    <div class="container">
+        <div [ngsReveal]="{ reset: true }" class="project-unit" *ngFor="let project of this.clearedProjects">
+            <img src="{{ project.src }}" alt="project-image" />
+            <div class="overlay">
+                <!-- <img src="{{project.src}}" alt="" /> -->
+                <h2 class="project-title">{{ project.title }}</h2>
+                <p class="project-desc">{{ project.description }}</p>
+                <a href="{{ project.link }}" class="button">Try out</a>
+            </div>
+        </div>
+    </div>
 </section>

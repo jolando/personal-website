@@ -1,148 +1,132 @@
 section {
-  min-height: 100vh;
-  background-color: var(--background-color-sec);
-  position: relative;
-  color: var(--text-color);
-  scroll-snap-align: start;
-  scroll-margin-top: 60px;
-  overflow: hidden;
-  @media (max-width: 640px) {
-    background-color: #3e71bf;
-  }
-
-  g {
-    @media (max-width: 640px) {
-      display: none;
-    }
-  }
-
-  svg {
-    position: absolute;
-    left: -500px;
-    right: -500px;
-    top: -10%;
-    transform: rotate(13deg);
-    overflow-x: hidden;
-    min-height: 150%;
-  }
-
-  .container {
-    height: 200px;
-    width: 300px;
-    z-index: 2;
-  }
-
-  .personal-picture {
-    display: block;
-    position: absolute;
-    bottom: 25%;
-    right: 15%;
-    background-color: rgba(255, 0, 0, 0.109);
-    height: 100%;
-    width: 100%;
-    max-width: 500px;
-    max-height: 500px;
-
-    @media (max-width: 1224px) {
-      bottom: 0 !important;
-      left: 50%;
-      transform: translateX(-50%) !important;
-      border-radius: 0;
-      max-height: 35vh;
-    }
-  }
-
-  .cta-link {
-    display: flex;
-    align-items: center;
-    gap: 31px;
-    position: absolute;
-    top: 94%;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 25px;
-    font-weight: bold;
-    border-bottom: 1px solid var(--text-color);
-    padding-bottom: 2px;
+    min-height: 100vh;
+    background-color: var(--background-color-sec);
+    position: relative;
     color: var(--text-color);
-
-    fa-icon {
-      font-size: 20px;
+    scroll-snap-align: start;
+    scroll-margin-top: 60px;
+    overflow: hidden;
+    @media (max-width: 640px) {
+        background-color: #3e71bf;
     }
-
-    @media (max-width: 1224px) {
-      display: none;
+    g {
+        @media (max-width: 640px) {
+            display: none;
+        }
     }
-  }
-
-  .header-container {
-    position: absolute;
-    bottom: 36vh;
-    left: 15%;
-
-    h1 {
-      font-size: clamp(50px, 4vw, 120px);
-      line-height: 100%;
-      color: var(--text-color-reverse);
+    svg {
+        position: absolute;
+        left: -500px;
+        right: -500px;
+        top: -10%;
+        transform: rotate(13deg);
+        overflow-x: hidden;
+        min-height: 150%;
     }
-
-    span {
-      font-size: 30px;
-
-      @media (max-width: 1224px) {
-        white-space: nowrap;
-      }
+    .container {
+        height: 200px;
+        width: 300px;
+        z-index: 2;
     }
-
-    @media (max-width: 940px) {
-      top: 25vh;
-      text-align: center;
-      left: 50%;
-      transform: translateX(-50%) !important;
-      border-radius: 0;
+    .personal-picture {
+        display: block;
+        position: absolute;
+        bottom: 25%;
+        right: 15%;
+        background-color: rgba(255, 0, 0, 0.109);
+        height: 100%;
+        width: 100%;
+        max-width: 500px;
+        max-height: 500px;
+        @media (max-width: 1224px) {
+            bottom: 0 !important;
+            left: 50%;
+            transform: translateX(-50%) !important;
+            border-radius: 0;
+            max-height: 35vh;
+        }
     }
-
-    a {
-      display: block;
-      text-align: center;
-      border: 2px solid transparent;
-      padding: 7px 30px;
-      text-decoration: none;
-      cursor: pointer;
-      font-size: 20px;
-      border: 2px solid white;
-      color: white;
-      transition: all 125ms ease-out;
-      max-width: 200px;
-      margin-top: 10px;
-
-      &:hover {
-        background-color: rgba(206, 206, 206, 0.226);
-      }
-
-      @media (max-width: 940px) {
+    .cta-link {
         display: flex;
-        justify-content: center;
         align-items: center;
-        margin: 40px auto;
-      }
+        gap: 11px;
+        position: absolute;
+        top: 94%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: 1px solid var(--text-color);
+        padding-bottom: 2px;
+        color: var(--text-color);
+        fa-icon {
+            font-size: 20px;
+        }
+        @media (max-width: 1224px) {
+            display: none;
+        }
     }
-  }
+    .header-container {
+        position: absolute;
+        bottom: 36vh;
+        left: 15%;
+        h1 {
+            font-size: clamp(50px, 4vw, 120px);
+            line-height: 100%;
+            color: var(--text-color-reverse);
+        }
+        span {
+            font-size: 30px;
+            @media (max-width: 1224px) {
+                white-space: nowrap;
+            }
+        }
+        @media (max-width: 940px) {
+            top: 25vh;
+            text-align: center;
+            left: 50%;
+            transform: translateX(-50%) !important;
+            border-radius: 0;
+        }
+        a {
+            display: block;
+            text-align: center;
+            border: 2px solid transparent;
+            padding: 7px 30px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 20px;
+            border: 2px solid white;
+            color: white;
+            transition: all 125ms ease-out;
+            max-width: 200px;
+            margin-top: 10px;
+            &:hover {
+                background-color: rgba(206, 206, 206, 0.226);
+            }
+            @media (max-width: 940px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 40px auto;
+            }
+        }
+    }
 }
 
 @keyframes pulse {
-  from {
-    opacity: 0.5;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.5;
-  }
+    from {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 
 .fe-pulse {
-  animation: pulse 5s infinite;
-  cursor: pointer;
+    animation: pulse 5s infinite;
+    cursor: pointer;
 }

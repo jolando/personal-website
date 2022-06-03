@@ -39,7 +39,7 @@ export class WorkComponent implements OnInit {
       title: 'El pollo loco',
       description: 'become familiar with object orientation',
       src: '../../../../assets/img/project/elpolloloco.png',
-      link: 'https://preeminent-macaron-6d2ef9.netlify.app',
+      link: 'https://remarkable-hamster-c6f798.netlify.app',
       main: 'js',
     },
     {

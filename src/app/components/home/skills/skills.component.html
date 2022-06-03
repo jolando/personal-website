@@ -1,14 +1,11 @@
 <section>
-  <div class="container" [ngsReveal]="{ reset: true }">
-    <div
-      [ngsReveal]="{ reset: true }"
-      class="skill-card-unit"
-      *ngFor="let card of cards; let i = index"
-    >
-      <div class="tech-icon">
-        <img src="{{ card.imgPath }}" alt="" />
-      </div>
-      <span>{{ card.title }}</span>
+    <h3>My Skills</h3>
+    <div class="container" [ngsReveal]="{ reset: true }">
+        <div [ngsReveal]="{ reset: true }" class="skill-card-unit" *ngFor="let card of cards; let i = index">
+            <div class="tech-icon">
+                <img src="{{ card.imgPath }}" alt="" />
+            </div>
+            <span>{{ card.title }}</span>
+        </div>
     </div>
-  </div>
 </section>
