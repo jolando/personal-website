@@ -75,6 +75,7 @@ export class WorkComponent implements OnInit {
 
   all: boolean = true;
   selected: boolean = false;
+  isActive: boolean = true;
 
   clearedProjects = [];
 
@@ -82,6 +83,22 @@ export class WorkComponent implements OnInit {
 
   ngOnInit(): void {
     this.clearedProjects = this.projects;
+  }
+
+  onButtonGroupClick($event) {
+    this.isActive = false;
+    let clickedElement = $event.target || $event.srcElement;
+
+    if (clickedElement.nodeName === 'BUTTON') {
+      let isCertainButtonAlreadyActive =
+        clickedElement.parentElement.querySelector('.active');
+
+      if (isCertainButtonAlreadyActive) {
+        isCertainButtonAlreadyActive.classList.remove('active');
+      }
+
+      clickedElement.className += ' active';
+    }
   }
 
   showAll() {
@@ -92,6 +109,7 @@ export class WorkComponent implements OnInit {
     this.clearedProjects = this.projects.filter(
       (project) => project.main === category
     );
+
     console.log(this.clearedProjects);
   }
 
