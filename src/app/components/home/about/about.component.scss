@@ -15,10 +15,9 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 10em 1fr;
-
     place-items: center;
     gap: 20px 10px;
-    width: 80%;
+    width: 73%;
     text-align: center;
     grid-template-areas:
       "profile-img profile-img about-text about-text"
@@ -39,10 +38,9 @@ section {
     place-items: center;
 
     img {
+      margin-top: 100px;
       height: 300px;
-      width: 300px;
       border-radius: 50%;
-      object-fit: cover;
     }
 
     .personal-picture {
@@ -60,7 +58,7 @@ section {
 
   .about-seperate {
     grid-area: about-seperate;
-    width: 100%;
+    width: 90%;
   }
   .about-unit1 {
     grid-area: about-unit1;
