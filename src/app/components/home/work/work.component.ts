@@ -18,7 +18,7 @@ export class WorkComponent implements OnInit {
       title: 'Join',
       description: 'kanban board',
       src: '../../../../assets/img/project/join-screen.png',
-      link: 'http://peter-rehmann.developerakademie.com/Join-Kanban-Board/board.html',
+      link: 'https://joinproject.netlify.app',
       main: 'js',
     },
     {
